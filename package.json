@@ -1,10 +1,11 @@
 {
   "name": "estoque",
   "version": "1.0.0",
-  "description": "",
+  "description": "Este projeto é o scaffolding inicial de uma API para gestão de controle de estoque. Ele fornece a estrutura básica para o desenvolvimento de uma aplicação backend, utilizando Node.js, Express e Swagger para documentação.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,15 @@
   "bugs": {
     "url": "https://github.com/RamonCimol/estoque/issues"
   },
-  "homepage": "https://github.com/RamonCimol/estoque#readme"
+  "homepage": "https://github.com/RamonCimol/estoque#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.37.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2"
+  }
 }
