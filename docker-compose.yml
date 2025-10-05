@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  estoque-api:
+    build: .
+    container_name: estoque-api
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    command: npm run dev
