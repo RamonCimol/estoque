@@ -59,6 +59,7 @@ gestao-consultas-api/
 ├── .prettierrc                  # Configuração do Prettier
 ├── package.json                 # Dependências e scripts do projeto
 └── README.md                    # Documentação do projeto
+
 <img width="531" height="415" alt="image" src="https://github.com/user-attachments/assets/59d55e7a-0e01-4624-8394-47ef76b9f819" />
 
 
