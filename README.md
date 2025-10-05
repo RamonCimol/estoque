@@ -41,7 +41,7 @@ Este projeto é o scaffolding inicial de uma API para gestão de controle de est
 
 ## Estrutura do Projeto
 
-gestao-consultas-api/
+estoque-api/
 ├── src/
 │   ├── config/                  # Configurações do projeto
 │   ├── controllers/             # Controladores da API
@@ -60,7 +60,8 @@ gestao-consultas-api/
 ├── package.json                 # Dependências e scripts do projeto
 └── README.md                    # Documentação do projeto
 
-<img width="531" height="415" alt="image" src="https://github.com/user-attachments/assets/59d55e7a-0e01-4624-8394-47ef76b9f819" />
+
+<img width="515" height="407" alt="image" src="https://github.com/user-attachments/assets/27ea737d-f1d4-4b2c-a734-482b173ca614" />
 
 
 
