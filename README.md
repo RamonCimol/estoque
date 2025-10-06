@@ -9,9 +9,22 @@ Este projeto é o scaffolding inicial de uma API para gestão de controle de est
 ## Como rodar o projeto
 
 ### Pré-requisitos
-- Node.js (v16 ou superior)
-- npm ou yarn
-- Git (opcional)
+
+- Node.js (v16 ou superior): O Node.js é o ambiente de execução que vai rodar o código JavaScript no servidor.
+
+npm ou yarn: Gerenciadores de pacotes para instalar as bibliotecas (dependências) do projeto.
+
+Git (opcional): Versionador utilizado na construção do projeto. Interessante utilizá-lo para download dos arquivos do sistema.
+
+dotenv: Pacote fundamental para a segurança do projeto, pois usa o arquivo .env para armazenar informações sensíveis (variáveis de ambiente) de forma segura.
+
+mysql2: A biblioteca de comunicação do Node.js com o banco de dados MySQL. Utilizar a versão "3.15.1", que suporta Promises.
+
+express.js: Framework usado para construir a API REST.
+
+swagger-ui-express: Utilizado para a documentação da API.
+
+MySQL ou MariaDB: Sistemas Gerenciadores de Banco de Dados (SGDBs) para armazenar as informações do sistema.
 
 ### Passos para execução
 
