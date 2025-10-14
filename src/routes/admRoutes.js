@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const admController = require('../controllers/admController');
+const autenticarToken = require('../middlewares/authMiddleware');
 
 /**
  * @swagger
@@ -18,22 +19,26 @@ router.get('/', admController.listarFuncoes);
  * /adm/usuario:
  *   get:
  *     summary: Lista funcionalidades do usuário administrador
+ *     security:
+ *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: Funcionalidades do usuário listadas
  */
-router.get('/usuario', admController.usuarioFuncoes);
+router.get('/usuario',autenticarToken, admController.usuarioFuncoes);
 
 /**
  * @swagger
  * /adm/confirmar:
  *   post:
  *     summary: Confirma uma ação do administrador
+ *     security:
+ *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: Ação confirmada com sucesso
  */
-router.post('/confirmar', admController.confirmar);
+router.post('/confirmar',autenticarToken, admController.confirmar);
 
 /**
  * @swagger

@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 
 dotenv.config(); // carrega variável SECRET_KEY do .env
 
+
 function autenticarToken(req, res, next) {
   // 1. Pegar o token do header Authorization
   const authHeader = req.headers['authorization'];

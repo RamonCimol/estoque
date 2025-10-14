@@ -27,8 +27,21 @@ const options = {
       }
     ]
   },
+  components: {
+       securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT"
+          }
+        }
+      },
+  security: [{
+    bearerAuth: []
+  }],
   apis: ['./src/routes/*.js'] // Caminho para os arquivos de rotas que terão anotações Swagger
 };
+
 
 // Gera a especificação
 const swaggerSpec = swaggerJsDoc(options);
@@ -39,3 +52,4 @@ function setupSwagger(app) {
 }
 
 module.exports = setupSwagger;
+
