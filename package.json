@@ -12,7 +12,13 @@
     "type": "git",
     "url": "git+https://github.com/RamonCimol/estoque.git"
   },
-  "keywords": ["estoque", "api", "nodejs", "express", "swagger"],
+  "keywords": [
+    "estoque",
+    "api",
+    "nodejs",
+    "express",
+    "swagger"
+  ],
   "author": "Alisson,Eliseu, Ramon",
   "license": "MIT",
   "bugs": {
@@ -22,6 +28,7 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
   },

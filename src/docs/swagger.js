@@ -34,6 +34,8 @@ const options = {
 const swaggerSpec = swaggerJsDoc(options);
 
 // Exporta função que registra o Swagger no Express
-module.exports = (app) => {
-  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-};
+function setupSwagger(app) {
+  app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+}
+
+module.exports = setupSwagger;
