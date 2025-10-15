@@ -1,0 +1,152 @@
+/* Estilos globais e reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex; /* Usamos Flexbox para centralizar o conteúdo na página */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Garante que a altura mínima é 100% da altura do viewport */
+}
+
+/* Estilos para o container principal */
+.login-container {
+    width: 100%;
+    max-width: 400px; /* Limita a largura máxima do container */
+    padding: 2rem;
+}
+
+/* Estilos para a caixa do formulário */
+.login-form-box {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-form-box h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* Estilos para os grupos de input */
+.input-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Estilos para o botão */
+.login-button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+/* --- Estilos para o formulário de login e navegação --- */
+
+.form-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 0.9em;
+}
+
+.form-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-link:hover {
+    text-decoration: underline;
+}
+
+.register-text {
+    margin-top: 1rem;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.register-text a, .login-text a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-text a:hover, .login-text a:hover {
+    text-decoration: underline;
+}
+
+/* --- Estilos para a página de registo --- */
+
+/* Reutilizamos estilos, apenas mudamos o container */
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+}
+
+.register-form-box {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.register-form-box h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.register-button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745; /* Cor verde, como no teu design */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #218838;
+}
+
+.login-text {
+    margin-top: 1rem;
+    font-size: 0.9em;
+    color: #555;
+}
