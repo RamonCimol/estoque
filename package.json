@@ -1,17 +1,18 @@
 {
   "name": "estoque",
   "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "description": "API para gestão de controle de estoque. Backend em Node.js com Express e Swagger.",
   "main": "src/index.js",
   "scripts": {
-    "start": "node dist/index.ts",
-    "dev:backend": "nodemon --exec ts-node src/index.ts",
-    "dev:frontend": "npm run dev --prefix frontend",
     "dev": "npm-run-all --parallel dev:backend dev:frontend",
-    "build": "npm run build --prefix frontend && tsc",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier . --write"
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "install-all": "npm install"
   },
   "repository": {
     "type": "git",
@@ -30,31 +31,7 @@
     "url": "https://github.com/RamonCimol/estoque/issues"
   },
   "homepage": "https://github.com/RamonCimol/estoque#readme",
-  "dependencies": {
-    "bcryptjs": "^3.0.2",
-    "dotenv": "^16.4.5",
-    "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "mysql2": "^3.15.2",
-    "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^5.0.1"
-  },
   "devDependencies": {
-    "@eslint/js": "^9.38.0",
-    "@types/bcryptjs": "^2.4.6",
-    "@types/dotenv": "^6.1.1",
-    "@types/express": "^5.0.3",
-    "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "^24.7.2",
-    "eslint": "^9.38.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-react": "^7.37.5",
-    "globals": "^16.4.0",
-    "jiti": "^2.6.1",
-    "nodemon": "^3.1.10",
-    "prettier": "^3.6.2",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.2"
+    "npm-run-all": "^4.1.5"
   }
 }
