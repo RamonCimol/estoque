@@ -1,0 +1,93 @@
+/* Em app/globals.css */
+
+/* 1. Reset moderno e box-sizing universal.
+  '::before' e '::after' são incluídos para garantir.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Definição de Variáveis CSS (Design Tokens)
+  Este é o "cérebro" do seu design moderno.
+*/
+:root {
+  /* Cores (exemplo) */
+  --cor-fundo: #ffffff;
+  --cor-texto: #1a1a1a;
+  --cor-primaria: #0070f3; /* Cor de destaque, links, botões */
+
+  /* Tipografia */
+  --fonte-principal: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fonte-mono: "Menlo", "Monaco", "Courier New", monospace;
+
+  /* Espaçamento (exemplo) */
+  --espacamento-sm: 0.5rem; /* 8px (se 1rem = 16px) */
+  --espacamento-md: 1rem; /* 16px */
+  --espacamento-lg: 2rem; /* 32px */
+
+  /* Largura máxima do container */
+  --largura-maxima: 1100px;
+}
+
+/* 3. (OPCIONAL) Suporte básico a Modo Escuro (Dark Mode)
+  Ele usa as mesmas variáveis, apenas troca os valores.
+*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-fundo: #1a1a1a;
+    --cor-texto: #eeeeee;
+  }
+}
+
+/* 4. Estilos globais do Body
+*/
+body {
+  font-family: var(--fonte-principal);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6; /* Melhora a legibilidade */
+  min-height: 100vh;
+}
+
+/* 5. Tornar mídias responsivas por padrão
+*/
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Remove espaço indesejado abaixo de imagens */
+}
+
+/* 6. Melhorias de Acessibilidade e UX
+*/
+html {
+  scroll-behavior: smooth; /* Rolagem suave ao clicar em links âncora (#) */
+}
+
+/* Melhora a visibilidade do foco para navegação via teclado */
+:focus-visible {
+  outline: 2px solid var(--cor-primaria);
+  outline-offset: 2px;
+}
+
+/* 7. Seu container, agora usando variáveis
+*/
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Media query para responsividade (tablets e desktops) */
+@media (min-width: 768px) {
+  .container {
+    width: 80%;
+    max-width: var(--largura-maxima);
+  }
+}

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 // Importamos APENAS o serviço
-import { userService } from "../services/registerService";
+import { userService } from "../services/register.service";
 
 export const registerUser = async (req: Request, res: Response) => {
   const { username, email, password } = req.body;

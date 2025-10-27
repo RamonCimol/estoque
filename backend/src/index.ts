@@ -1,7 +1,7 @@
 import "dotenv/config";
 import express from "express";
-import registerRoutes from "./routes/registerRoutes"; // Importa as rotas de autenticação
-import loginRoutes from "./routes/loginRoutes"; // Importa as rotas de autenticação
+import registerRoutes from "./routes/register.routes"; // Importa as rotas de autenticação
+import loginRoutes from "./routes/login.routes"; // Importa as rotas de autenticação
 
 const app = express();
 const PORT = process.env.PORT || 3000;
