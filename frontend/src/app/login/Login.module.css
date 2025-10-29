@@ -13,29 +13,31 @@
   justify-content: center;
   min-height: 100vh;
   width: 100%;
-  background-color: #f4f7f6; /* Um fundo levemente cinza */
+  background-color: #62b3ffe0;
   font-family: system-ui, sans-serif;
 }
 
-/* A caixa branca do formulário */
 .loginBox {
   width: 100%;
-  max-width: 420px; /* Largura do formulário */
+  max-width: 420px;
   padding: 2.5rem;
-  background-color: #ffffff;
-  /* border-radius: 8px; */ /* A imagem não mostra, mas é uma boa prática */
-  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); */
+  background-color: #ffffffe1;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   margin-bottom: 2rem;
 }
 
 /* Placeholder se você não tiver a imagem do logo */
 .logoPlaceholder {
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 1.6rem;
+  font-weight: bolder;
   color: var(--cor-texto-principal);
   letter-spacing: 2px;
 }
@@ -81,7 +83,7 @@
   font-size: 1rem;
   color: var(--cor-texto-principal);
   background-color: transparent;
-  outline: none; /* Remove a borda azul do Chrome */
+  outline: none;
   transition: border-color 0.2s ease-in-out;
 }
 

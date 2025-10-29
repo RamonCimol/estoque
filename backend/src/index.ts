@@ -4,7 +4,7 @@ import registerRoutes from "./routes/register.routes"; // Importa as rotas de au
 import loginRoutes from "./routes/login.routes"; // Importa as rotas de autenticação
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3200;
 
 // Middleware para processar requisições JSON
 app.use(express.json());

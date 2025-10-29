@@ -10,14 +10,16 @@ export default function LoginPage() {
       <div className={styles.loginBox}>
         {/* Logo (Substitua 'logo.svg' pelo caminho real do seu logo) */}
         <div className={styles.logoContainer}>
-          {/* Como não tenho o logo, vou usar um placeholder. 
-            Você pode trocar por um <Image /> do next/image
-            <Image src="/logo-topdata.svg" alt="Topdata Logo" width={150} height={40} />
-          */}
+          <Image
+              src="/Logo_so_bujigangas.png"
+              alt="Logo Gerenciador de Estoque" 
+              width={150}
+              height={40}
+          />
           <span className={styles.logoPlaceholder}>Gerenciador de Estoque</span>
         </div>
 
-        <h1 className={styles.title}>Seja bem vindo!</h1>
+        <h1 className={styles.title}>Login</h1>
         <p className={styles.subtitle}>Faça login para acessar o sistema.</p>
 
         {/* Formulário */}

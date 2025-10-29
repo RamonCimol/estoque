@@ -29,7 +29,7 @@ export class UserRegisterModel {
 
   /**
    * Cria um novo usuário no banco de dados.
-   * Note: Ele espera receber a senha JÁ hasheada.
+   * O hashing é feito pelo service.
    */
   public async create(
     username: string,
@@ -38,13 +38,11 @@ export class UserRegisterModel {
   ): Promise<void> {
     try {
       await pool.execute(
-        // Note que o campo no DB deve ser 'senha' ou 'senha_hash'
         "INSERT INTO usuarios (nome_usuario, email, senha) VALUES (?, ?, ?)",
         [username, email, hashedPassword]
       );
     } catch (dbError) {
       console.error("Erro ao inserir no DB:", dbError);
-      // Lança o erro para o Service tratar
       throw new Error("Erro de banco de dados ao criar usuário.");
     }
   }
