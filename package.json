@@ -12,7 +12,9 @@
     "dev": "npm-run-all --parallel dev:backend dev:frontend",
     "dev:backend": "npm run dev --workspace=backend",
     "dev:frontend": "npm run dev --workspace=frontend",
-    "install-all": "npm install"
+    "install-all": "npm install",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
   },
   "homepage": "https://github.com/RamonCimol/estoque#readme",
   "devDependencies": {
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.6.2"
   }
 }

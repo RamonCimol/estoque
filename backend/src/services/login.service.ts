@@ -1,21 +1,9 @@
 import bcrypt from "bcryptjs";
-import { pool } from "../database";
 import jwt from "jsonwebtoken";
-// Importar o tipo RowDataPacket do 'mysql2/promise'
-import { RowDataPacket } from "mysql2/promise";
+// Importamos o repositório e os tipos
+import { usuarioModel } from "../models/login.model";
 
-// **Correção:** Importamos a chave secreta do ambiente.
-// É essencial que 'dotenv' já tenha sido carregado em algum lugar antes.
 const JWT_SECRET = process.env.JWT_SECRET;
-
-interface Usuario {
-  id_usuario: number;
-  email: string;
-  senha: string;
-}
-
-// Criar uma interface que estenda RowDataPacket para tipar o resultado do banco
-interface UsuarioRow extends RowDataPacket, Usuario {}
 
 export class LoginService {
   public async login(email: string, password: string): Promise<string> {
@@ -24,35 +12,28 @@ export class LoginService {
       throw new Error("Erro de configuração do servidor.");
     }
 
-    let rows: UsuarioRow[] = [];
-    try {
-      [rows] = await pool.execute<UsuarioRow[]>(
-        "SELECT id_usuario, email, senha FROM usuarios WHERE email = ?",
-        [email]
-      );
-    } catch (dbError) {
-      console.error("Erro ao procurar usuário:", dbError);
-      throw new Error("Erro de servidor ao tentar logar.");
-    }
+    // 1. Delegamos a busca ao repositório
+    const usuario = await usuarioModel.findByEmail(email);
 
-    if (rows.length === 0) {
+    // 2. A lógica de negócio FICA NO SERVICE
+    // Se o repositório retornou null, o *serviço de login*
+    // entende que o e-mail ou a senha estão errados.
+    if (!usuario) {
       throw new Error("E-mail ou senha incorretos.");
     }
 
-    const usuario: Usuario = rows[0]!;
-    const hashedPasswordFromDB = usuario.senha;
-
-    const isMatch = await bcrypt.compare(password, hashedPasswordFromDB);
+    // 3. A lógica de negócio de comparação FICA NO SERVICE
+    const isMatch = await bcrypt.compare(password, usuario.senha_hash);
 
     if (!isMatch) {
       throw new Error("E-mail ou senha incorretos.");
     }
 
-    // 1. GERAÇÃO DO JWT
+    // 4. A lógica de negócio de geração de token FICA NO SERVICE
     const token = jwt.sign(
       { userId: usuario.id_usuario, email: usuario.email },
       JWT_SECRET,
-      { expiresIn: "1h" }
+      { expiresIn: "8h" }
     );
 
     return token;

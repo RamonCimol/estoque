@@ -22,7 +22,6 @@ export const loginUser = async (req: Request, res: Response) => {
     const errorMessage = (error as Error).message;
 
     if (errorMessage === "E-mail ou senha incorretos.") {
-      // Status 401: Não Autorizado (Falha na autenticação)
       return res.status(401).json({ error: errorMessage });
     }
 

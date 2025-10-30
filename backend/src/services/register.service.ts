@@ -21,7 +21,7 @@ export class UserService {
     // 2. Cria o novo utilizador
     //    O Service passa os dados prontos (com senha hasheada) para o Model.
     await userRegisterModel.create(username, email, hashedPassword);
-    
+
     // O try/catch do Model já vai lançar um erro se a inserção falhar,
     // que o Controller vai pegar.
   }

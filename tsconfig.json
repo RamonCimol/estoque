@@ -2,13 +2,13 @@
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
     // File Layout
-    "rootDir": "server/src",
+    "rootDir": "C:/GIT/estoque/",
     "outDir": "./dist",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
     "module": "commonjs",
-    "moduleResolution": "node", 
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "target": "esnext",
     "types": [],
@@ -41,6 +41,6 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true,
+    "skipLibCheck": true
   }
 }

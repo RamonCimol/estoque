@@ -148,3 +148,17 @@
   color: #999;
   margin-top: 2rem;
 }
+
+.errorMessage {
+  color: #ff4d4d; /* Vermelho */
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* <-- MUDANÇA 8: Adicionar este estilo */
+.successMessage {
+  color: #4caf50; /* Verde */
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}

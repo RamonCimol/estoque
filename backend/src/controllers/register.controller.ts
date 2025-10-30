@@ -1,30 +1,35 @@
 import { Request, Response } from "express";
-//importando o service, o resto é responsabilidade do controller e abstração em camadas
-import { userService, UserExistsError} from "../services/register.service";
+// 1. Renomeamos o import para "user.service" (para consistência)
+import { userService, UserExistsError } from "../services/register.service";
 
 export const registerUser = async (req: Request, res: Response) => {
   const { username, email, password } = req.body;
 
-  // 1. Validação de entrada (Controller)
   if (!username || !email || !password) {
     return res
-      .status(400).json({ message: 'Todos os campos devem ser preenchidos!' });;
+      .status(400)
+      .json({ message: "Todos os campos devem ser preenchidos!" });
   }
 
   try {
-    // 2. Delega a lógica para o service
-    await userService.register(username, email, password);
+    // Captura do 'newUserId' que o service retorna
+    const newUserId = await userService.register(username, email, password);
 
-    // 3. Formata a Resposta de Sucesso (Controller)
-    res.status(201).json({ message: 'Usuário registrado com sucesso!' });
-  } catch (error) {
-    // 4. Trata erros no controller, mas vindos do service
-    console.error("Erro no registo:", error);
+    // Retornado o ID do usuário na resposta.
+    res.status(201).json({
+      message: "Usuário registrado com sucesso!",
+      userId: newUserId, // <-- Adicionado
+    });
+  } catch (error: any) {
+    // Tipar como 'any' para checar a instância
 
     if (error instanceof UserExistsError) {
-      return res.status(400).json({ message: error.message }); // Aqui também é enviado um obejto JSON
+      //: Usa '409 Conflict'
+      return res.status(409).json({ message: error.message });
     }
 
+    // Erro genérico
+    console.error("Erro no registo (Inesperado):", error);
     res.status(500).json({ message: "Erro interno no servidor." });
   }
 };
